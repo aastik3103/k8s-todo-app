@@ -42,7 +42,11 @@ jobs:
           git clone https://github.com/aastik3103/todo-app-gitops.git gitops
           cd gitops
           
-          sed -i "s|image: ghcr.io/${{ github.repository }}:.*|image: ghcr.io/${{ github.repository }}:${{ github.sha }}|g" app-deployment.yaml
+          if [[ "$OSTYPE" == "darwin"* ]]; then
+            sed -i '' "s|image: ghcr.io/${{ github.repository }}:.*|image: ghcr.io/${{ github.repository }}:${{ github.sha }}|g" app-deployment.yaml
+          else
+            sed -i "s|image: ghcr.io/${{ github.repository }}:.*|image: ghcr.io/${{ github.repository }}:${{ github.sha }}|g" app-deployment.yaml
+          fi
           
           # Commit changes
           git config --global user.name "GitHub Actions"
