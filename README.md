@@ -297,5 +297,5 @@ The table is automatically created when the server starts.
 
 ## License
 
-ISC
+ISC.
 
