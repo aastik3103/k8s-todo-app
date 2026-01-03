@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
+README.md
+.DS_Store
+*.log
+.env.example
+env.template
+setup-env.js
+API_CURL_COMMANDS.md
+Todo_API.postman_collection.json
+
